@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <div class="click" style="border: solid 1px; padding: 10px;cursor: pointer;">click me</div>
+  <!-- <div class="click" style="border: solid 1px; padding: 10px;cursor: pointer;">click me</div> -->
+</head>
+<body>
+  <!-- <script src="index.js"></script> -->
+  <script>
+      // var counter = (function(){
+      //   var count = 0;
+      //   return function(){
+      //     return count++;
+      //   }
+      // }());
+      // console.log(counter());
+      // console.log(counter());
+      // console.log(counter());
+      // console.log(counter());
+      var element = document.getElementsByClassName("click")[0];
+
+      var makeSizer = (function(){
+        var newSize = 0;
+        return function(arg,size){
+          newSize+=size;
+          return  arg.style.fontSize = newSize+"px";
+        };
+      }());
+      element.onclick = function(){
+        var computedStyle = this.currentStyle || window.getComputedStyle(this, null);
+        console.log(makeSizer(this,parseInt(computedStyle.fontSize)));
+      };
+  </script>
+</body>
+</html>
