@@ -5,98 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!-- <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> -->
   <title>Document</title>
 </head>
 <body>
-  <div class="div">
-    <div class="click">click me<i class="fa fa-times-circle" aria-hidden="true"></i></div>
-    <div class="box" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, ad, consequatur! Mollitia commodi libero dolores ipsam eum nesciunt, at, omnis? Autem id ab, placeat ad temporibus architecto quia deleniti dolor.</div>
-  </div>  
-  <div class="div">
-    <div class="click">click me<i class="fa fa-times-circle" aria-hidden="true"></i></div>
-    <div class="box" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, ad, consequatur! Mollitia commodi libero dolores ipsam eum nesciunt, at, omnis? Autem id ab, placeat ad temporibus architecto quia deleniti dolor.</div>
-  </div>  
-  <!-- <div class="click" style="border: solid 1px; padding: 10px;cursor: pointer;">click me</div> -->
-   <a href="#">link-1</a>
-   <a href="#">link-2</a>
-   <a href="#" style="display: none;">link-3</a> 
+  <header class="header"></header>
+  <main class="content">
+    <section class="services"> 
+      <div class="services__menu">
+        <ul class="menu__list">
+         <li class="menu__list--item"><a class="menu__list--links" href="#">link-1</a></li>
+         <li class="menu__list--item"><a class="menu__list--links" href="#">link-2</a></li>
+         <li class="menu__list--item"><a class="menu__list--links" href="#">link-3</a></li> 
+        </ul>
+        <div class="menu__item">
+          <div class="item active"><span>First text</span><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur, consectetur temporibus blanditiis soluta enim voluptates rerum fuga labore nulla libero mollitia voluptate perferendis et, facere provident repellendus nostrum aperiam.Beatae sint necessitatibus, omnis voluptatibus, odio quidem ipsa numquam perspiciatis dolores nihil repellat aliquam fugiat officia ab, libero natus cupiditate mollitia. Sapiente dolor sunt reprehenderit similique quaerat ut accusamus aperiam.</p></div>
+          <div class="item"><span>Second text</span><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur, consectetur temporibus blanditiis soluta enim voluptates rerum fuga labore nulla libero mollitia voluptate perferendis et, facere provident repellendus nostrum aperiam.Beatae sint necessitatibus, omnis voluptatibus, odio quidem ipsa numquam perspiciatis dolores nihil repellat aliquam fugiat officia ab, libero natus cupiditate mollitia. Sapiente dolor sunt reprehenderit similique quaerat ut accusamus aperiam.</p></div>
+          <div class="item"><span>Third text</span><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur, consectetur temporibus blanditiis soluta enim voluptates rerum fuga labore nulla libero mollitia voluptate perferendis et, facere provident repellendus nostrum aperiam.Beatae sint necessitatibus, omnis voluptatibus, odio quidem ipsa numquam perspiciatis dolores nihil repellat aliquam fugiat officia ab, libero natus cupiditate mollitia. Sapiente dolor sunt reprehenderit similique quaerat ut accusamus aperiam.</p></div>
+        </div>
+      </div>  
+    </section> 
+   </main> 
   <!-- <script src="index.js"></script> -->
+  <footer class="footer"></footer>
   <style>
-    .click{
-      border: solid 1px; padding: 10px;cursor: pointer;
-    }
-    .click i{
-      float: right;
-      font-size: 20px;
-      margin-top: -1px;
-      transform: rotate(45deg);
-      transition: ease 0.5s;
-    }
-    .box{
-      display: none;
-      opacity: 0;
-      box-sizing: border-box;
-      text-align: center;
-      border: solid 1px;
-      width: 100%;
-      padding: 20px 0px;
-      transition: ease 0.5s;
-    }
-    .show{
-      display: block;
-      opacity: 1;
-      border: solid red 1px;
-      transition: ease 0.5s;
-      
-    }
-    .click .rotate{
-      transform: rotate(0deg);
-    }
+  body,html{
+    height: 100%;
+  }
+  body{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  ul,body{
+    padding: 0;
+    margin: 0;
+  }
+  .content{
+    flex: 1;
+  }
+  .header,.footer{
+    height: 100px;
+    border: solid 1px;
+  }
+  .services__menu{
+    width: 960px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+  }
+  .menu__list{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+  }
+  .menu__list--item{
+    list-style: none;
+  }
+  .menu__list--item:first-child .menu__list--links{
+    background-color: #ecf2d6;
+    margin-left: 0;
+  }
+  .menu__list--links{
+    margin: 10px;
+    padding: 30px;
+    border: solid 1px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+  }
+  .menu__item{
+    border: solid 1px;
+    width: 100%;
+    padding: 5px 10px;
+  }
+  .menu__item .item{
+    display: none;
+  }
+  .menu__item .active{
+    display: block;
+  }
+  .menu__item .item span{
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .menu__item .item p{
+    text-align: justify;
+  }
+  .menu__item .item:first-child{
+    color: #767adc;
+  }
+  .menu__item .item:nth-child(2){
+    color: tomato;
+  }
+  .menu__item .item:nth-child(3){
+    color: #21d22e;
+  }
   </style>
   <script>
-    $(function(){
-      $(".click").click(function(){
-        var bloks = $(".box");
-        if($(this).siblings(".box").hasClass("show")){
-          $(this).siblings(".box").removeClass("show");
-        }
-        else{
-          for (let i of bloks) {
-            i.classList.remove("show")
-          }
-          $(this).find("i").addClass("rotate");
-          $(this).siblings(".box").addClass("show");
+    var links = document.querySelectorAll(".menu__list li .menu__list--links");
+    var items = document.querySelectorAll(".menu__item .item");
+
+      links.forEach( function(value,index){
+        value.onclick = function(){
+          links.forEach( function(value,index){
+            value.style.background = "#fff";
+          });
+          this.style.background = '#ecf2d6';
+          show(this,index);
+          return false;
         }
       });
-    });
-  </script>
-  <script>
-      // var counter = (function(){
-      //   var count = 0;
-      //   return function(){
-      //     return count++;
-      //   }
-      // }());
-      // console.log(counter());
-      // console.log(counter());
-      // console.log(counter());
-      // console.log(counter());
 
-
-      // var element = document.getElementsByClassName("click")[0];
-
-      // var makeSizer = (function(){
-      //   var newSize = 0;
-      //   return function(arg,size){
-      //     newSize+=size;
-      //     return  arg.style.fontSize = newSize+"px";
-      //   };
-      // }());
-      // element.onclick = function(){
-      //   var computedStyle = this.currentStyle || window.getComputedStyle(this, null);
-      //   console.log(makeSizer(this,parseInt(computedStyle.fontSize)));
-      // };
+      function show(value, index) {
+        items.forEach(function(el){
+          el.style.display = "none";
+        })
+        items[index].style.display = "block";
+      }
   </script>
 </body>
 </html>
