@@ -4,12 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <title>Document</title>
-  <div class="click" style="border: solid 1px; padding: 10px;cursor: pointer;">click me</div>
-  <!-- <div class="click" style="border: solid 1px; padding: 10px;cursor: pointer;">click me</div> -->
 </head>
 <body>
+  <div class="div">
+    <div class="click">click me<i class="fa fa-times-circle" aria-hidden="true"></i></div>
+    <div class="box" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, ad, consequatur! Mollitia commodi libero dolores ipsam eum nesciunt, at, omnis? Autem id ab, placeat ad temporibus architecto quia deleniti dolor.</div>
+  </div>  
+  <div class="div">
+    <div class="click">click me<i class="fa fa-times-circle" aria-hidden="true"></i></div>
+    <div class="box" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, ad, consequatur! Mollitia commodi libero dolores ipsam eum nesciunt, at, omnis? Autem id ab, placeat ad temporibus architecto quia deleniti dolor.</div>
+  </div>  
+  <!-- <div class="click" style="border: solid 1px; padding: 10px;cursor: pointer;">click me</div> -->
+   <a href="#">link-1</a>
+   <a href="#">link-2</a>
+   <a href="#" style="display: none;">link-3</a> 
   <!-- <script src="index.js"></script> -->
+  <style>
+    .click{
+      border: solid 1px; padding: 10px;cursor: pointer;
+    }
+    .click i{
+      float: right;
+      font-size: 20px;
+      margin-top: -1px;
+      transform: rotate(45deg);
+      transition: ease 0.5s;
+    }
+    .box{
+      display: none;
+      opacity: 0;
+      box-sizing: border-box;
+      text-align: center;
+      border: solid 1px;
+      width: 100%;
+      padding: 20px 0px;
+      transition: ease 0.5s;
+    }
+    .show{
+      display: block;
+      opacity: 1;
+      border: solid red 1px;
+      transition: ease 0.5s;
+    }
+    .click .rotate{
+      transform: rotate(0deg);
+    }
+  </style>
+  <script>
+    $(function(){
+      $(".click").click(function(){
+        var bloks = $(".box");
+        if($(this).siblings(".box").hasClass("show")){
+          $(this).siblings(".box").removeClass("show");
+        }
+        else{
+          for (let i of bloks) {
+            i.classList.remove("show")
+          }
+          $(this).find("i").addClass("rotate");
+          $(this).siblings(".box").addClass("show");
+        }
+      });
+    });
+  </script>
   <script>
       // var counter = (function(){
       //   var count = 0;
@@ -21,19 +81,21 @@
       // console.log(counter());
       // console.log(counter());
       // console.log(counter());
-      var element = document.getElementsByClassName("click")[0];
 
-      var makeSizer = (function(){
-        var newSize = 0;
-        return function(arg,size){
-          newSize+=size;
-          return  arg.style.fontSize = newSize+"px";
-        };
-      }());
-      element.onclick = function(){
-        var computedStyle = this.currentStyle || window.getComputedStyle(this, null);
-        console.log(makeSizer(this,parseInt(computedStyle.fontSize)));
-      };
+
+      // var element = document.getElementsByClassName("click")[0];
+
+      // var makeSizer = (function(){
+      //   var newSize = 0;
+      //   return function(arg,size){
+      //     newSize+=size;
+      //     return  arg.style.fontSize = newSize+"px";
+      //   };
+      // }());
+      // element.onclick = function(){
+      //   var computedStyle = this.currentStyle || window.getComputedStyle(this, null);
+      //   console.log(makeSizer(this,parseInt(computedStyle.fontSize)));
+      // };
   </script>
 </body>
 </html>
